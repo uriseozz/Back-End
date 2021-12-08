@@ -52,13 +52,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable();
         /////////////////////////////////////
         http.authorizeRequests()
-                .antMatchers("/**").permitAll()
+//                .antMatchers("/**").permitAll()
 // image 폴더를 login 없이 허용
 //                .antMatchers("/images/**").permitAll()
 //// css 폴더를 login 없이 허용
 //                .antMatchers("/css/**").permitAll()
 //// 회원 관리 처리 API 전부를 login 없이 허용
-//                .antMatchers("/api/user/**").permitAll()
+                .antMatchers("/api/user/**").permitAll()
 //
 //                .antMatchers("/api/posting/**").permitAll()
 //

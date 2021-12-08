@@ -50,6 +50,7 @@ public class Board extends Timestamped{
     private LocalDateTime modifiedAt;
 
     public void update(BoardRequestDto boardRequestDto) {
+        BoardValidator.checkNull(boardRequestDto.getUsername(), boardRequestDto.getTitle(), boardRequestDto.getContent(), boardRequestDto.getCategoryname());
         this.username = boardRequestDto.getUsername();
         this.title = boardRequestDto.getTitle();
         this.content = boardRequestDto.getContent();
