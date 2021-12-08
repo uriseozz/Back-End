@@ -10,11 +10,14 @@ public class BoardResponseDto {
     private String username;
     private String title;
     private String img;
+    //추가부분
+    private int view;
 
     @Builder
-    public BoardResponseDto(String username, String title, String img) {
+    public BoardResponseDto(String username, String title, String img, int view) {
         this.username = username;
         this.title = title;
         this.img =img;
+        this.view = view;
     }
 }

@@ -46,9 +46,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                     .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
                     // 토큰 기반 인증이므로 세션 역시 사용하지 않습니다.
-
-
-
+        /////////////////////////////////////////
+        http.headers().frameOptions().disable()
+                .and()
+                .httpBasic().disable();
+        /////////////////////////////////////
         http.authorizeRequests()
                 .antMatchers("/**").permitAll()
 // image 폴더를 login 없이 허용
