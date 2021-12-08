@@ -51,6 +51,7 @@ public class Comment extends Timestamped{
         this.userId = userId;
     }
     public void update(CommentDto commentDto) {
+        CommentValidator.checkNull(commentDto.getUsername(), commentDto.getCommentcontent(),0L,0L);
         this.commentcontent = commentDto.getCommentcontent();
     }
     public CommentDto toDto() {

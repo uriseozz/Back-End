@@ -26,13 +26,13 @@ public class UserValidator {
         }
     }
     public static void checkForm(String username, String password, String email) {
-        if(username == null) {
+        if(username.equals("")) {
             throw new IllegalArgumentException("아아디는 필수 입력 값 입니다");
         }
-        if(password == null) {
+        if(password.equals("")) {
             throw new IllegalArgumentException("비밀번호는 필수 입력 값 입니다");
         }
-        if(email == null) {
+        if(email.equals("")) {
             throw new IllegalArgumentException("이메일은 필수 입력 값 입니다");
         }
 
