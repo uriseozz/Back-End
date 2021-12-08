@@ -53,4 +53,5 @@ public class BoardController {
     public void deletePosting(@PathVariable Long id, @RequestBody BoardRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails){
         boardService.deleteBoard(id, requestDto, userDetails);
     }
+    //주석
 }
