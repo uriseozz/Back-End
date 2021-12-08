@@ -75,4 +75,12 @@ public class BoardService {
         boardRepository.deleteById(id);
     }
 
+
+//    //게시판 조회수 업데이트
+//    @Transactional
+//    public int updateView(Long id) {
+//        return boardRepository.updateView(id);
+//    }
+
+
 }
