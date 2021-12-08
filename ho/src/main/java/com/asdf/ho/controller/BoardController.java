@@ -39,7 +39,9 @@ public class BoardController {
     //게시물 상세 페이지 보기
     @GetMapping("/user/posting/{id}")
     public DetailBoardResponseDto getDetailPostings(@PathVariable Long id) {
-        boardService.updateView(id);
+
+     //   boardService.updateView(id);
+
         return boardService.findPostingDetail(id);
     }
 
