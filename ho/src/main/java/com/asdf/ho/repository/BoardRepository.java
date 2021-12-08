@@ -14,9 +14,9 @@ public interface BoardRepository extends JpaRepository<Board, Long> {
 
 
     // 게시판 조회수 기능 추가
-//    @Modifying
-//    @Query("update Board p set p.view = p.view + 1 where p.id = :id")
-//    int updateView(Long id);
+    @Modifying
+    @Query("update Board b set b.view = b.view + 1 where b.id = :id")
+    int updateView(Long id);
 
 
 }

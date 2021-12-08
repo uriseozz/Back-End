@@ -51,7 +51,8 @@ public class UserController {
         Map<String,String>username =new HashMap<>();
         Map<String,String>token = new HashMap<>();
         List<Map<String,String>> tu = new ArrayList<>(); // -> 리스트를 만드는데, Map형태(키:밸류 형태)의 변수들을 담을 것이다.
-        token.put("token",jwtTokenProvider.createToken(Long.toString(member.getId()),member.getUsername())); // "username" : {username}
+//        token.put("token",jwtTokenProvider.createToken(Long.toString(member.getId()),member.getUsername())); // "username" : {username}
+        token.put("token",jwtTokenProvider.createToken(member.getUsername(), Long.toString(member.getId())));
         username.put("username",member.getUsername()); // "token" : {token}
         tu.add(username); //List형태 ["username" : {username}]
         tu.add(token); //List형태 ["token" : {token}]

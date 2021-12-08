@@ -31,8 +31,8 @@ public class CommentController {
 
     //댓글 삭제
     @DeleteMapping("/posting/{id}/comment/{commentid}")
-    public void deleteComment(@PathVariable Long commentid,@RequestBody CommentDto commentDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        commentService.delete(commentid, commentDto, userDetails);
+    public void deleteComment(@PathVariable Long commentid,@AuthenticationPrincipal UserDetailsImpl userDetails) {
+        commentService.delete(commentid, userDetails);
     }
 
 //주석

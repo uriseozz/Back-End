@@ -1,8 +1,5 @@
 package com.asdf.ho.entity;
 
-
-
-
 import com.asdf.ho.dto.board.BoardRequestDto;
 import com.asdf.ho.dto.board.BoardResponseDto;
 import com.asdf.ho.dto.board.DetailBoardResponseDto;
@@ -42,13 +39,15 @@ public class Board extends Timestamped{
     @Column(nullable = false)
     private String categoryname;
 
+    @Column
+    private int view;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
     private LocalDateTime modifiedAt;
-
 
     public void update(BoardRequestDto boardRequestDto) {
         this.username = boardRequestDto.getUsername();
@@ -72,6 +71,7 @@ public class Board extends Timestamped{
                 .username(username)
                 .title(title)
                 .img(img)
+                .view(view)
                 .build();
     }
 
@@ -83,8 +83,11 @@ public class Board extends Timestamped{
                 .img(img)
                 .modifiedAt(modifiedAt)
                 .comments(comments)
+                .view(view)
                 .build();
 
     }
+
+    
 
 }
