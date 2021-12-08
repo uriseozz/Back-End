@@ -42,6 +42,9 @@ public class Board extends Timestamped{
     @Column(nullable = false)
     private String categoryname;
 
+    @Column
+    private int view;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
@@ -72,6 +75,7 @@ public class Board extends Timestamped{
                 .username(username)
                 .title(title)
                 .img(img)
+                .view(view)
                 .build();
     }
 
@@ -83,6 +87,7 @@ public class Board extends Timestamped{
                 .img(img)
                 .modifiedAt(modifiedAt)
                 .comments(comments)
+                .view(view)
                 .build();
 
     }
