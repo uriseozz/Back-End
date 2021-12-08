@@ -27,19 +27,19 @@ public class CommentService {
     //댓글 수정 메소드
     @Transactional
     public void updateComment(Long commentId, CommentDto commentDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        if(!userDetails.getUser().getUsername().equals(commentDto.getUsername())) {
+        Comment comment = commentRepository.findById(commentId).orElseThrow(() ->new IllegalArgumentException("해당 댓글이 존재하지 않습니다."));
+        if(!userDetails.getUser().getId().equals(comment.getUserId())) {
             throw new IllegalArgumentException("작성자만 수정 가능합니다.");
         }
-        Comment comment = commentRepository.findById(commentId).orElseThrow(
-                () -> new IllegalArgumentException("해당 댓글이 존재하지 않습니다."));
         comment.update(commentDto);
 
     }
 
     //댓글 삭제 메소드
     @Transactional
-    public void delete(Long commentId, CommentDto commentDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        if(!userDetails.getUser().getUsername().equals(commentDto.getUsername())) {
+    public void delete(Long commentId, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        Comment comment = commentRepository.findById(commentId).orElseThrow(() ->new IllegalArgumentException("해당 댓글이 존재하지 않습니다."));
+        if(!userDetails.getUser().getId().equals(comment.getUserId())) {
             throw new IllegalArgumentException("작성자만 삭제 가능합니다.");
         }
         commentRepository.deleteById(commentId);
