@@ -9,11 +9,14 @@ import com.asdf.ho.dto.board.DetailBoardResponseDto;
 
 import com.asdf.ho.service.BoardService;
 import com.asdf.ho.service.CommentService;
+import com.asdf.ho.validator.BoardValidator;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -38,7 +41,8 @@ public class BoardController {
 
     //게시물 상세 페이지 보기
     @GetMapping("/user/posting/{id}")
-    public DetailBoardResponseDto getDetailPostings(@PathVariable Long id) {
+    public DetailBoardResponseDto getDetailPostings(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
+//        BoardValidator.viewCountUp(id,request,response);
         boardService.updateView(id);
         return boardService.findPostingDetail(id);
     }
@@ -46,13 +50,14 @@ public class BoardController {
     //게시글 수정하기
     @PutMapping("/posting/{id}")
     public void modifyPosting(@PathVariable Long id, @RequestBody BoardRequestDto boardRequestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        System.out.println("userdetails" +userDetails);
         boardService.updateBoard(id, boardRequestDto, userDetails);
     }
 
     //게시글 삭제하기
     @DeleteMapping("/posting/{id}")
-    public void deletePosting(@PathVariable Long id, @RequestBody BoardRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails){
-        boardService.deleteBoard(id, requestDto, userDetails);
+    public void deletePosting(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails){
+        boardService.deleteBoard(id, userDetails);
     }
     //주석
 

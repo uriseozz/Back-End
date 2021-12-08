@@ -26,6 +26,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
     private final CommentRepository commentRepository;
 
+
     //게시물 저장 메소드
     @Transactional
     public void saveBoard(BoardRequestDto boardRequestDto) {
@@ -61,6 +62,7 @@ public class BoardService {
         if(!userDetails.getUser().getUsername().equals(requestDto.getUsername())) {
             throw new IllegalArgumentException("작성자만 수정 가능합니다.");
         }
+        System.out.println(requestDto.getUsername());
         Board board = boardRepository.findById(id).orElseThrow(
                 ()-> new IllegalArgumentException("해당 게시글이 존재하지 않습니다."));
         board.update(requestDto);
@@ -68,8 +70,9 @@ public class BoardService {
 
     //게시글 삭제
     @Transactional
-    public void deleteBoard(Long id, BoardRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        if(!userDetails.getUser().getUsername().equals(requestDto.getUsername())) {
+    public void deleteBoard(Long id, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        Board board = boardRepository.findById(id).orElseThrow(() ->new IllegalArgumentException("해당 게시물이 존재하지 않습니다."));
+        if(!userDetails.getUser().getUsername().equals(board.getUsername())) {
             throw new IllegalArgumentException("작성자만 삭제 가능합니다.");
         }
         boardRepository.deleteById(id);
@@ -81,6 +84,5 @@ public class BoardService {
     public int updateView(Long id) {
         return boardRepository.updateView(id);
     }
-
 
 }

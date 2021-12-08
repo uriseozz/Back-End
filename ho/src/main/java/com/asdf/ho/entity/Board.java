@@ -1,8 +1,5 @@
 package com.asdf.ho.entity;
 
-
-
-
 import com.asdf.ho.dto.board.BoardRequestDto;
 import com.asdf.ho.dto.board.BoardResponseDto;
 import com.asdf.ho.dto.board.DetailBoardResponseDto;
@@ -52,7 +49,6 @@ public class Board extends Timestamped{
     @LastModifiedDate
     private LocalDateTime modifiedAt;
 
-
     public void update(BoardRequestDto boardRequestDto) {
         this.username = boardRequestDto.getUsername();
         this.title = boardRequestDto.getTitle();
@@ -91,5 +87,7 @@ public class Board extends Timestamped{
                 .build();
 
     }
+
+    
 
 }
