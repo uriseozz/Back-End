@@ -7,6 +7,7 @@ import com.asdf.ho.dto.comment.CommentDto;
 import com.asdf.ho.validator.BoardValidator;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -16,6 +17,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
+@Setter
 @Getter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
@@ -41,6 +43,9 @@ public class Board extends Timestamped{
 
     @Column
     private int view;
+
+    @Column
+    private int LikeCnt;
 
     @CreatedDate
     @Column(updatable = false)
