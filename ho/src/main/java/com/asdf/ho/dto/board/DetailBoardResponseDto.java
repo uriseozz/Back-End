@@ -18,9 +18,10 @@ public class DetailBoardResponseDto {
     private String content;
     private String img;
     private LocalDateTime modifiedAt;
-    private List<CommentDto> comments;
-    //조회수
     private int view;
+    private List<CommentDto> comments;
+
+
 
     @Builder
     public DetailBoardResponseDto(String username, String title, String content, String img, LocalDateTime modifiedAt, List<CommentDto> comments, int view) {
