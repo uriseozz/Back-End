@@ -69,6 +69,7 @@ public class Board extends Timestamped{
 
     public BoardResponseDto toDto() {
         return BoardResponseDto.builder()
+                .id(id)
                 .username(username)
                 .title(title)
                 .img(img)

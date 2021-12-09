@@ -36,13 +36,13 @@ public class UserValidator {
             throw new IllegalArgumentException("이메일은 필수 입력 값 입니다");
         }
 
-        if(!Pattern.matches("(?=.*[0-9])(?=.*[a-zA-Z])(?=\\S+$).{3,}",username)) {
-            throw new IllegalArgumentException("닉네임은 영문 대,소문자 또는 숫자가 1개 이상씩 포함된 3자이상이어야 합니다.");
+        if(!Pattern.matches("^[a-zA-Z0-9]{4,12}$",username)) {
+            throw new IllegalArgumentException("아이디는 대문자,소문자,숫자로 이루어진 4~12자여야 합니다.");
         }
-        if(!Pattern.matches(".{4,}",password)) {
+        if(!Pattern.matches("^.{4,}$",password)) {
             throw new IllegalArgumentException("비밀번호는 4자이상의 비밀번호여야 합니다.");
         }
-        if(!Pattern.matches("^[a-z0-9A-Z._-]*@[a-z0-9A-Z]*.[a-zA-Z.]*$",email)) {
+        if(!Pattern.matches("^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$",email)) {
             throw new IllegalArgumentException("이메일 형식이 올바르지 않습니다.");
         }
         if(password.contains(username)) {
