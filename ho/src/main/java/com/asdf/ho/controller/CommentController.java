@@ -18,8 +18,7 @@ public class CommentController {
     //댓글 저장
     @PostMapping("/posting/{id}/comment")
     public void registComment(@PathVariable Long id, @RequestBody CommentDto commentDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-//        Long userId = userDetails.getUser().getId();
-        Long userId = 1L;
+        Long userId = userDetails.getUser().getId();
         commentService.saveComment(id, userId, commentDto);
     }
 

@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.7'
+    id 'org.springframework.boot' version '2.5.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -33,6 +33,13 @@ dependencies {
     annotationProcessor "org.springframework.boot:spring-boot-configuration-processor" // Use ConfigurationProperties
     //aws s3
     implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.5.RELEASE'
+
+    implementation 'io.springfox:springfox-swagger2:2.9.2'
+
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
+
+
 }
 
 test {
