@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
 
     @ResponseBody
     @ExceptionHandler(Exception.class)
-    public String handleExcepttion(Exception ex) {
+    public String handleException(Exception ex) {
         return ex.getMessage();
     }
 }
