@@ -17,7 +17,7 @@ public class DetailBoardResponseDto {
     private String title;
     private String content;
     private String img;
-    private LocalDateTime modifiedAt;
+    private String modifiedAt;
     private int view;
     private List<CommentDto> comments;
 
@@ -29,7 +29,7 @@ public class DetailBoardResponseDto {
         this.title = title;
         this.content = content;
         this.img = img;
-        this.modifiedAt = modifiedAt;
+        this.modifiedAt = modifiedAt.toString();
         this.comments = comments;
         this.view = view;
     }

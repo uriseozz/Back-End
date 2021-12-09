@@ -3,8 +3,6 @@ package com.asdf.ho.entity;
 
 import com.asdf.ho.dto.board.BoardResponseDto;
 import com.asdf.ho.dto.category.CategoryDto;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
