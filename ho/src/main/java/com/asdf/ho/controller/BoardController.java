@@ -6,19 +6,12 @@ import com.asdf.ho.config.UserDetailsImpl;
 import com.asdf.ho.dto.board.BoardRequestDto;
 import com.asdf.ho.dto.board.BoardResponseDto;
 import com.asdf.ho.dto.board.DetailBoardResponseDto;
-
 import com.asdf.ho.service.BoardService;
-import com.asdf.ho.service.CommentService;
-import com.asdf.ho.validator.BoardValidator;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -30,7 +23,10 @@ public class BoardController {
 
     //포스팅 입력받기
     @PostMapping("/posting")
-    public String createPosting(@RequestBody BoardRequestDto boardRequestDto) {
+    public String createPosting(@AuthenticationPrincipal UserDetailsImpl userDetails, @RequestBody BoardRequestDto boardRequestDto) {
+        if(userDetails.getUser().getId() == null) {
+            throw new IllegalArgumentException("로그인 한 회원만 작성할 수 있습니다.");
+        }
         boardService.saveBoard(boardRequestDto);
         return "게시글 작성이 완료되었습니다.";
     }
@@ -60,8 +56,6 @@ public class BoardController {
     public void deletePosting(@PathVariable Long id, @AuthenticationPrincipal UserDetailsImpl userDetails){
         boardService.deleteBoard(id, userDetails);
     }
-    //주석
-
 
 
 }
