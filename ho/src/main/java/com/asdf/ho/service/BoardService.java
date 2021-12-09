@@ -32,6 +32,7 @@ public class BoardService {
     public void saveBoard(BoardRequestDto boardRequestDto) {
         boardRepository.save(new Board(boardRequestDto));
     }
+
     //전체 게시물 출력 리스트
     @Transactional
     public List<BoardResponseDto> findPostingList() {
@@ -84,5 +85,14 @@ public class BoardService {
     public int updateView(Long id) {
         return boardRepository.updateView(id);
     }
+
+    // 게시글 만든 아이디 조회수 업 방지 기능
+    public void viewCountUp(Long boardId, String username) {
+        Board board = boardRepository.findById(boardId).orElseThrow(() -> new IllegalArgumentException("존재하지 않는 게시물입니다."));
+        if(!username.equals(board.getUsername())) {
+            updateView(boardId);
+        }
+    }
+
 
 }

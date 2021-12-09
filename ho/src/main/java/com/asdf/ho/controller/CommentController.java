@@ -35,6 +35,5 @@ public class CommentController {
         commentService.delete(commentid, userDetails);
     }
 
-//주석
 
 }

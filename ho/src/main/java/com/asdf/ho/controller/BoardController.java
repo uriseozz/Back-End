@@ -15,8 +15,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -39,18 +41,17 @@ public class BoardController {
         return boardService.findPostingList();
     }
 
-    //게시물 상세 페이지 보기
+    //게시물 상세 페이지 보기 & 게시글 작성자 아이디로 조회시 조회수 안늘어남
     @GetMapping("/user/posting/{id}")
-    public DetailBoardResponseDto getDetailPostings(@PathVariable Long id, HttpServletRequest request, HttpServletResponse response) {
-//        BoardValidator.viewCountUp(id,request,response);
-        boardService.updateView(id);
+    public DetailBoardResponseDto getDetailPostings(@AuthenticationPrincipal UserDetailsImpl userDetails, @PathVariable Long id) {
+        if(userDetails==null) boardService.updateView(id);
+        else boardService.viewCountUp(id,userDetails.getUser().getUsername());
         return boardService.findPostingDetail(id);
     }
 
     //게시글 수정하기
     @PutMapping("/posting/{id}")
     public void modifyPosting(@PathVariable Long id, @RequestBody BoardRequestDto boardRequestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        System.out.println("userdetails" +userDetails);
         boardService.updateBoard(id, boardRequestDto, userDetails);
     }
 
