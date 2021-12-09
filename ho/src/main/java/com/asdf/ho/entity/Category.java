@@ -22,10 +22,6 @@ public class Category {
     @Column
     private String categoryname;
 
-//    @OneToMany
-//    @JoinColumn(name = "CATEGORY_ID")
-//    private List<Board> boards;
-
     public Category(String categoryname) {
         this.categoryname = categoryname;
     }
