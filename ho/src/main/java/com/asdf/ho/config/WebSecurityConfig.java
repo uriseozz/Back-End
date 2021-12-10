@@ -56,25 +56,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         /////////////////////////////////////
         http.authorizeRequests()
 //                .antMatchers("/**").permitAll()
-// image 폴더를 login 없이 허용
-//                .antMatchers("/images/**").permitAll()
-//// css 폴더를 login 없이 허용
-//                .antMatchers("/css/**").permitAll()
+
 //// 회원 관리 처리 API 전부를 login 없이 허용
                 .antMatchers("/api/user/**").permitAll()
                 .antMatchers("/swagger-ui.html","/swagger/**","/swagger-resources/**").permitAll()
                 .antMatchers("/v2/api-docs", "/configuration/ui",
                         "/swagger-resources", "/configuration/security",
                         "/swagger-ui.html", "/webjars/**","/swagger/**").permitAll()
-//                .antMatchers("/api/posting/**").permitAll()
-//
-//                .antMatchers("/list").permitAll()
-//
-//                .antMatchers("/webjars/bootstrap/4.5.0/css/bootstrap.min.css").permitAll()
-//                .antMatchers("/webjars/jquery/3.5.1/jquery.min.js").permitAll()
-//                .antMatchers("/webjars/bootstrap/4.5.0/js/bootstrap.min.js").permitAll()
-//                .antMatchers("https://fonts.gstatic.com").permitAll()
-//                .antMatchers("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap").permitAll()
+                .antMatchers("/api/posting/**").permitAll()
 
 
 
