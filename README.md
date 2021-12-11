@@ -108,11 +108,67 @@
 ## ✒Trouble Shooting
 <details>
     <summary>
-        요약
+        1. CORS 정책으로 인한 접속문제
     </summary>
     <div markcown="1">
-        숨김페이지
+        cors필터를 스프링 시큐리티에 끼워 넣어서 해결
     </div>
 </details>
+
+<details>
+    <summary>
+        2. Spring Security와 JWT로 인한 카카오 로그인 문제
+    </summary>
+    <div markcown="1">
+        카카오 강제로그인을 없애고 jwt 토큰 발급을 이용해 해결
+    </div>
+</details>
+
+<details>
+    <summary>
+        3. 관계형 데이터 매핑 문제
+    </summary>
+    <div markcown="1">
+        필요 유무에 따라 JPA 설계
+    </div>
+</details>
+
+<details>
+    <summary>
+        4. 글로벌핸들링으로 에러처리 시 로그인정보 없어도 로그인이 됨
+    </summary>
+    <div markcown="1">
+        HttpStatus에 400에러 와 메세지를 같이 전달로 에러처리
+    </div>
+</details>
+
+<details>
+    <summary>
+        5. 파일 업로드가 안되는 현상
+    </summary>
+    <div markcown="1">
+        undefined되어 읽히지 않던 부분이 있었고 개발자검사에서 network부분에서 api에 id부분이 값이 안오는 것을 보고 원인을 발견 후
+@Transactional로 오류해결
+    </div>
+</details>
+
+<details>
+    <summary>
+        6. jwt토큰 받을 때 userdetails에 username이 안나옴
+    </summary>
+    <div markcown="1">
+        payload에 실린 값의 위치를 변경함으로 해결
+    </div>
+</details>
+
+<details>
+    <summary>
+        7. 파일 업로드를 서버에하면 데이터양이 방대해짐
+    </summary>
+    <div markcown="1">
+        EC2와 다른S3서버에 이미지를 업로드함으로 해결
+    </div>
+</details>
+
 </br>
 </br>
