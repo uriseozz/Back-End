@@ -106,28 +106,7 @@
 
 ## 📜API TABLE
 </br>
-      
-**회원가입**
-| 기능 | Method | URL | Request | response |
-| --- | --- | --- | --- | --- |
-| 회원가입 | POST | /api/user/signup | {"username": "username", "password":"password", "passwordCheck":"password", "email": "email"} | 회원가입 성공시: Success Sign up |
-| 아이디 중복확인 | POST | /api/user/checkid | {"username":"beomin123"} | 아이디 존재시: Existed Id, 아이디 없을시: You can use this Id |
-| 이메일 중복확인 | POST | /api/user/checkemail | {"email":"email@naver.com"} | 이메일 존재시: Existed Email, 이메일 없을시: You can use this Email |
-</br>
-  
-**로그인**
-| 기능 | Method | URL | Request | response |
-| --- | --- | --- | --- | --- |
-| 로그인 | POST | /api/user/login | {"username": "username", "password": "password"} | msg :'로그인 성공' 성공시: [{"username": "username"}, {"token": "해쉬값"}] / 실패시: msg:'로그인 실패' |
-  
-**메인페이지**
-| 기능 | Method | URL | Request | response |
-| --- | --- | --- | --- | --- |
-| 카테고리에 
-따라 분류된 전체 게시글 
-목록조회 | GET | /api/category/1 |  |  |
-| 전체 게시글 목록 보이기 | GET | /api/user/main |  | {{"id": 1, "username":"username", "title":"title", "img":"src", "view" : 1, "categoryname":"dog"}} |
-  
+
 ![image](https://user-images.githubusercontent.com/86363774/145669813-5e22eccd-eb4a-4c2d-a8cb-f561b9478f98.png)
 ![image](https://user-images.githubusercontent.com/86363774/145669824-218e9e81-6162-4a1c-b10a-566f0d6db688.png)
 ![image](https://user-images.githubusercontent.com/86363774/145669841-a2164ca2-5002-4a5b-b2bb-e8c29e77c7b3.png)
