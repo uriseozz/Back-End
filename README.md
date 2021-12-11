@@ -81,15 +81,6 @@
 
 ## 🖥와이어프레임
 </br>
-<details>
-    <summary>
-        와이어프레임 
-    </summary>
-  
-    <div markcown="1">
-
-    </div>
-</details>
 
 **<메인 페이지>**
 ![image](https://user-images.githubusercontent.com/86363774/145669516-3b976230-9dfa-4d5a-9607-2e46fd99d928.png)
