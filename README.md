@@ -11,14 +11,10 @@
 ### MEMBER
 
 ### 프론트엔드
-<p>정상일</p>
-<p>이지연</p>
-<p>김형래</p>
+<h3>정상일 ,이지연 ,김형래</h3>
 
 ### 백엔드
-<p>이현범</p>
-<p>이한울</p>
-<p>서유리</p>
+<h3>이현범 ,이한울 ,서유리</h3>
 
 </br>
 </br>
@@ -122,30 +118,18 @@
 | 기능 | Method | URL | Request | response |
 | --- | --- | --- | --- | --- |
 | 로그인 | POST | /api/user/login | {"username": "username", "password": "password"} | msg :'로그인 성공' 성공시: [{"username": "username"}, {"token": "해쉬값"}] / 실패시: msg:'로그인 실패' |
-</br>
   
 **메인페이지**
 | 기능 | Method | URL | Request | response |
 | --- | --- | --- | --- | --- |
-| 카테고리에 따라 분류된 전체 게시글 목록조회 | GET | /api/category/1 |  |  |
+| 카테고리에 
+따라 분류된 전체 게시글 
+목록조회 | GET | /api/category/1 |  |  |
 | 전체 게시글 목록 보이기 | GET | /api/user/main |  | {{"id": 1, "username":"username", "title":"title", "img":"src", "view" : 1, "categoryname":"dog"}} |
-</br>
-
-**게시글 작성 페이지**
-| 기능 | Method | URL | Request | response |
-| --- | --- | --- | --- | --- |
-| 분류할 카테고리 목록 저장 | POST | /api/category | {"categoryname" : "고양이"}
-| 게시글 작성 | POST | /api/posting | {"username": "username", "title" : "title", "content" : "content", "img" : "src", "categoryname" : "dog"} | - msg alert("게시글 작성이 완료되었습니다.") |
-| 파일업로드 | POST | /api/v1/upload | file | form-data |
-</br>
-
-**게시글 작성 페이지**
-| 기능 | Method | URL | Request | response |
-| --- | --- | --- | --- | --- |
-| 게시글 및 댓글 조회 | GET | /api/user/posting/{id} |  | {{"username": "username", "title" : "title", "content" : "content", "img" : "src", "modifiedAt":"modifiedAt"} "view": 1, "comments":[{"username":"username", "commentcontent":"commentcontent" }]} |
-| 게시글 수정 | PUT | /api/posting/{id} | {"username": "username", "title" : "title", "content" : "content", "img" : "src", "categoryname" : "category"} |  |
-| 게시글 삭제 | DELETE | /api/posting/{id} |  |  |
-| 댓글 작성 | POST | /api/posting/{id}/comment | {"username" : "username",  "commentcontent": "commentcontent"} |  |
+  
+![image](https://user-images.githubusercontent.com/86363774/145669813-5e22eccd-eb4a-4c2d-a8cb-f561b9478f98.png)
+![image](https://user-images.githubusercontent.com/86363774/145669824-218e9e81-6162-4a1c-b10a-566f0d6db688.png)
+![image](https://user-images.githubusercontent.com/86363774/145669841-a2164ca2-5002-4a5b-b2bb-e8c29e77c7b3.png)
 
 </br>
 </br>
