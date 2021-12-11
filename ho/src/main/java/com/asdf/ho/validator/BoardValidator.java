@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BoardValidator {
-    public static void checkNull(String username, String title, String content, String categoryname) {
+    public static void checkNull(String username, String title, String content, String categoryname, String img) {
         if(username.equals("")) {
             throw new IllegalArgumentException("아이디는 필수 입력 값 입니다");
         }
@@ -17,6 +17,10 @@ public class BoardValidator {
         if(categoryname.equals("")) {
             throw new IllegalArgumentException("카테고리는 필수 입력 값 입니다");
         }
+        if(img.equals("")) {
+            throw new IllegalArgumentException("이미지는 필수 입력 값 입니다");
+        }
+
     }
 
 

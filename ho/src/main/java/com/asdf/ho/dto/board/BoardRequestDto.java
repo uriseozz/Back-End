@@ -1,7 +1,9 @@
 package com.asdf.ho.dto.board;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 
 @Getter

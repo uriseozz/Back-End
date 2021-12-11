@@ -4,10 +4,9 @@ import com.asdf.ho.dto.board.BoardRequestDto;
 import com.asdf.ho.dto.board.BoardResponseDto;
 import com.asdf.ho.dto.board.DetailBoardResponseDto;
 import com.asdf.ho.dto.comment.CommentDto;
+import com.asdf.ho.dto.likes.LikeDto;
 import com.asdf.ho.validator.BoardValidator;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -35,7 +34,7 @@ public class Board extends Timestamped{
     @Column(nullable = false)
     private String content;
 
-    @Column
+    @Column(nullable = false)
     private String img;
 
     @Column(nullable = false)
@@ -45,7 +44,7 @@ public class Board extends Timestamped{
     private int view;
 
     @Column
-    private int LikeCnt;
+    private int likeCnt;
 
     @CreatedDate
     @Column(updatable = false)
@@ -55,7 +54,7 @@ public class Board extends Timestamped{
     private LocalDateTime modifiedAt;
 
     public void update(BoardRequestDto boardRequestDto) {
-        BoardValidator.checkNull(boardRequestDto.getUsername(), boardRequestDto.getTitle(), boardRequestDto.getContent(), boardRequestDto.getCategoryname());
+        BoardValidator.checkNull(boardRequestDto.getUsername(), boardRequestDto.getTitle(), boardRequestDto.getContent(), boardRequestDto.getCategoryname(), boardRequestDto.getImg());
         this.username = boardRequestDto.getUsername();
         this.title = boardRequestDto.getTitle();
         this.content = boardRequestDto.getContent();
@@ -64,7 +63,7 @@ public class Board extends Timestamped{
     }
 
     public Board(BoardRequestDto boardRequestDto) {
-        BoardValidator.checkNull(boardRequestDto.getUsername(), boardRequestDto.getTitle(), boardRequestDto.getContent(), boardRequestDto.getCategoryname());
+        BoardValidator.checkNull(boardRequestDto.getUsername(), boardRequestDto.getTitle(), boardRequestDto.getContent(), boardRequestDto.getCategoryname(), boardRequestDto.getImg());
         this.username = boardRequestDto.getUsername();
         this.title = boardRequestDto.getTitle();
         this.content = boardRequestDto.getContent();
@@ -79,6 +78,8 @@ public class Board extends Timestamped{
                 .title(title)
                 .img(img)
                 .view(view)
+                .categoryname(categoryname)
+                .likeCnt(likeCnt)
                 .build();
     }
 
@@ -91,10 +92,17 @@ public class Board extends Timestamped{
                 .modifiedAt(modifiedAt)
                 .comments(comments)
                 .view(view)
+                .likeCnt(likeCnt)
                 .build();
 
     }
+    public LikeDto toLikeDto() {
+        return LikeDto.builder()
+                .boardId(id)
+                .likeCnt(likeCnt)
+                .build();
 
+    }
     
 
 }

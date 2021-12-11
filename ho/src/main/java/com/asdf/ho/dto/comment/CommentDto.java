@@ -11,6 +11,8 @@ import lombok.*;
 @Setter
 @Getter
 public class CommentDto {
+    private Long commentId;
+
     private String username;
 
     private String commentcontent;
@@ -24,7 +26,8 @@ public class CommentDto {
                 .build();
     }
     @Builder
-    public CommentDto(String username, String commentcontent) {
+    public CommentDto(Long commentId, String username, String commentcontent) {
+        this.commentId = commentId;
         this.username = username;
         this.commentcontent = commentcontent;
     }

@@ -13,13 +13,17 @@ public class BoardResponseDto {
     private String img;
     //추가부분
     private int view;
+    private String categoryname;
+    private int likeCnt;
 
     @Builder
-    public BoardResponseDto(Long id, String username, String title, String img, int view) {
+    public BoardResponseDto(Long id, String username, String title, String img, int view, String categoryname, int likeCnt) {
         this.id = id;
         this.username = username;
         this.title = title;
         this.img =img;
         this.view = view;
+        this.categoryname = categoryname;
+        this.likeCnt = likeCnt;
     }
 }

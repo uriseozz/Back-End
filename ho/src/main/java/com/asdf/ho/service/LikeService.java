@@ -8,6 +8,8 @@ import com.asdf.ho.repository.BoardRepository;
 import com.asdf.ho.repository.LikeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 import java.util.Optional;
 
 @Service
@@ -27,8 +29,8 @@ public class LikeService {
 //        }
 //    }
 
-
-    public void likeProc(Long id, UserDetailsImpl userDetails) {
+    @Transactional
+    public LikeDto likeProc(Long id, UserDetailsImpl userDetails) {
         Long boardId = id;
         Long userId = userDetails.getUser().getId();
 
@@ -49,5 +51,10 @@ public class LikeService {
             board.setLikeCnt(board.getLikeCnt()+1);
         }
         boardRepository.save(board);
+        Board foundBoard = boardRepository.findById(boardId).orElseThrow(
+                ()->new IllegalArgumentException("유효하지 않은 게시물입니다.")
+        );
+        return foundBoard.toLikeDto();
+
     }
 }

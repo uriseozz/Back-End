@@ -35,8 +35,25 @@ public class UserService {
         String password = passwordEncoder.encode(signupRequestDto.getPassword());
         User user = new User(email,password,username);
         userRepository.save(user);
-        return "회원가입 완료";
+        return "Success Sign up";
 
+    }
+
+
+    public String checksId(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+        if (user.isPresent()) {
+            return "Existed Id";
+        }
+        return "You can use this Id";
+    }
+
+    public String checksEmail(String email) {
+        Optional<User> user = userRepository.findByEmail(email);
+        if (user.isPresent()) {
+            return "Existed Email";
+        }
+        return "You can use this Email";
     }
 
 

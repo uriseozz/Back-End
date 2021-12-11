@@ -1,6 +1,7 @@
 package com.asdf.ho.controller;
 
 import com.asdf.ho.config.UserDetailsImpl;
+import com.asdf.ho.dto.likes.LikeDto;
 import com.asdf.ho.service.LikeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -14,10 +15,12 @@ public class LikeController {
     private final LikeService likeService;
 
     @PostMapping("/api/board/like/{boardid}")
-    public void likeProc(@PathVariable Long boardid, @AuthenticationPrincipal UserDetailsImpl userDetails){
+    public LikeDto likeProc(@PathVariable Long boardid, @AuthenticationPrincipal UserDetailsImpl userDetails){
         if(userDetails == null){
             throw new IllegalArgumentException("로그인이 필요합니다.");
         }
-        likeService.likeProc(boardid,userDetails);
+        return likeService.likeProc(boardid,userDetails);
+
+
     }
 }

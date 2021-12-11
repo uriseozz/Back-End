@@ -20,11 +20,12 @@ public class DetailBoardResponseDto {
     private String modifiedAt;
     private int view;
     private List<CommentDto> comments;
+    private int likeCnt;
 
 
 
     @Builder
-    public DetailBoardResponseDto(String username, String title, String content, String img, LocalDateTime modifiedAt, List<CommentDto> comments, int view) {
+    public DetailBoardResponseDto(String username, String title, String content, String img, LocalDateTime modifiedAt, List<CommentDto> comments, int view, int likeCnt) {
         this.username = username;
         this.title = title;
         this.content = content;
@@ -32,5 +33,6 @@ public class DetailBoardResponseDto {
         this.modifiedAt = modifiedAt.toString();
         this.comments = comments;
         this.view = view;
+        this.likeCnt = likeCnt;
     }
 }

@@ -56,6 +56,7 @@ public class Comment extends Timestamped{
     }
     public CommentDto toDto() {
         return CommentDto.builder()
+                .commentId(id)
                 .username(username)
                 .commentcontent(commentcontent)
                 .build();
