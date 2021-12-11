@@ -37,6 +37,7 @@ https://github.com/HangHae-Team-9/Front-End
 
 ## 🛠TECH STACK🛠
 
+### Back-End
 
 <img height="40" src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"></a>&nbsp;
 <img height="40" src="https://img.shields.io/badge/MySQL-005C84?style=flat&logo=mysql&logoColor=white"></a>&nbsp;
