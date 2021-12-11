@@ -15,6 +15,7 @@ http://ohyo.shop.s3-website.ap-northeast-2.amazonaws.com
 <p>정상일</p>
 <p>이지연</p>
 <p>김형래</p>
+https://github.com/HangHae-Team-9/Front-End
 </br>
 
 **Back-end**
@@ -35,6 +36,8 @@ http://ohyo.shop.s3-website.ap-northeast-2.amazonaws.com
 </br>
 
 ## 🛠TECH STACK🛠
+
+
 <img height="40" src="https://img.shields.io/badge/github-181717?style=flat&logo=github&logoColor=white"></a>&nbsp;
 <img height="40" src="https://img.shields.io/badge/MySQL-005C84?style=flat&logo=mysql&logoColor=white"></a>&nbsp;
 <img height="40" src="https://img.shields.io/badge/Springboot-47?style=flat&logo=Springboot&logoColor=white"/></a>&nbsp;
@@ -44,6 +47,19 @@ http://ohyo.shop.s3-website.ap-northeast-2.amazonaws.com
 <img height="40" src="https://img.shields.io/badge/gradle-02303A?style=flat&logo=gradle&logoColor=white"></a>&nbsp;
 <img height="40" src="https://img.shields.io/badge/Amazon_AWS-FF9900?style=flat&logo=amazonaws&logoColor=white"></a>&nbsp;
 <img height="40" src="https://img.shields.io/badge/Notion-000000?style=flat&logo=notion&logoColor=white"></a>&nbsp;
+
+
+### Front-End
+<div>
+  <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/figma-F24E1E?style=for-the-badge&logo=figma&logoColor=black">
+  <img src="https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=AmazonAWS&logoColor=white">
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">  
+  
+</div>
 </br>
 </br>
 
