@@ -31,6 +31,7 @@ https://github.com/HangHae-Team-9/Front-End
 
 ## 🎞프로젝트 시연 영상🎞
 ![Hnet-image](https://user-images.githubusercontent.com/90505402/145673301-d27810b2-c587-44ea-bbe7-bf6e0ae896a8.gif)
+https://www.youtube.com/watch?v=u5QnR_4bg2c
 
 </br>
 </br>
