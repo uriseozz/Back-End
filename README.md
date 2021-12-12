@@ -9,7 +9,7 @@ http://ohyo.shop.s3-website.ap-northeast-2.amazonaws.com
 </br>
 </br>
 
-### MEMBER👬👬
+### MEMBE👨‍👧‍👧
 
 **Front-end**
 <p>정상일</p>
