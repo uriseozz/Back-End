@@ -15,14 +15,14 @@ http://ohyo.shop.s3-website.ap-northeast-2.amazonaws.com
 <p>정상일</p>
 <p>이지연</p>
 <p>김형래</p>
-https://github.com/HangHae-Team-9/Front-End
+Github : https://github.com/HangHae-Team-9/Front-End
 </br>
 
 **Back-end**
 <p>이현범</p>
 <p>이한울</p>
 <p>서유리</p>
-
+Github : https://github.com/HangHae-Team-9/Back-End
 </br>
 </br>
 
